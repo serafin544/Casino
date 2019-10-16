@@ -15,5 +15,4 @@ public class bjDealer {
     public void stay(){
 
     }
-    ArrayList<>
 }
