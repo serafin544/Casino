@@ -14,6 +14,7 @@ public enum CardValues {
     QUEEN(10),
     KING(10),
     ACE(11);
+
     private int cardValues;
 
     public int getCardValues() {
