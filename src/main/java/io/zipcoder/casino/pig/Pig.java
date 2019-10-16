@@ -1,6 +1,16 @@
 package io.zipcoder.casino.pig;
 
-public class Pig {
-    private int gamePoint = 50;
+import io.zipcoder.casino.casino.GamblingPlayer;
 
+import java.util.ArrayList;
+
+public class Pig implements GamblingPlayer {
+
+    public double money() {
+        return 0;
+    }
+
+    public ArrayList<Object> hand() {
+        return null;
+    }
 }

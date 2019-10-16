@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public interface GamblingPlayer {
 
-    public abstract double money();
+    public double money();
 
     public ArrayList<Object> hand();
 }
