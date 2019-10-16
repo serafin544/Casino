@@ -1,4 +1,9 @@
 package io.zipcoder.casino.blackJack;
 
-public class CardFaces {
+public enum CardFaces {
+    HEARTS,
+    CLUBS,
+    DIAMONDS,
+    SPADES;
+
 }
