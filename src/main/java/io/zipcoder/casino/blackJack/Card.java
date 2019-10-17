@@ -29,4 +29,9 @@ public class Card {
     public int getValue() {
         return cardValues.getValue();
     }
+
+    @Override
+    public String toString() {
+        return cardValues + " of " + cardFaces;
+    }
 }

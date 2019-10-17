@@ -8,29 +8,31 @@ import io.zipcoder.casino.utilities.Console;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public abstract class BlackJackGame implements GamblingGame  {
+public class BlackJackGame implements GamblingGame  {
 
 
 
 
-    ArrayList<Card> gameDeck;
     Player player;
-    ArrayList<Card> compHand;
-    ArrayList<Card> playerHand;
+    ArrayList<Card> compHand = new ArrayList<Card>();
+    ArrayList<Card> playerHand = new ArrayList<Card>();
     BjDeck deck = new BjDeck();
-    double wallet = player.getWallet();
+    double wallet;
     static double totalPool = 0.0;
+    ArrayList<Card> gameDeck = deck.createDeck();
+    Console console = new Console(System.in,System.out);
+
+
     public  void wageMoney(double bet) {
         totalPool += bet;
     }
-    public BlackJackGame(ArrayList<Card> gameDeck, Player player){
-       gameDeck =  deck.createDeck();
-       player = new Player(null);
+    public BlackJackGame( Player player){
+     this.player = player;
+     wallet = player.getWallet();
 
     }
-    public void play(Player player, Console console){
+    public void play(){
         Scanner scan = new Scanner(System.in);
-        console = new Console(System.in,System.out);
         System.out.println("Welcome to BlackJack");
         System.out.println("Rules: \n Make the highest Combo \nDo not go over 21 \n Press 1 to hit \n Press 0 to hit \nPress anything else and you lose your bet");
 
@@ -38,9 +40,10 @@ public abstract class BlackJackGame implements GamblingGame  {
         int counter = 0;
         boolean bust = false;
         status();
-        System.out.println("\n Place your bet");
+
         //Set up Scanner to take in double and not go over wallet amt
-        double playerBet = 0.0; //input stand in
+
+        double playerBet = console.getDoubleInput("Place your bet"); //input stand in
         //Takes away the money might move it to end
         wallet -= playerBet;
         //Adds to the betting pool
@@ -56,7 +59,7 @@ public abstract class BlackJackGame implements GamblingGame  {
         playerHand.add(deck.drawCard());
         compHand.add(deck.drawCard());
         showCards();
-        showCompCards(counter);
+        showCompCards();
         counter++;
 
         while(!bust){
@@ -69,6 +72,7 @@ public abstract class BlackJackGame implements GamblingGame  {
             hitOrStay(input);
             bust = checkIfBust(playerHand);
             showCards();
+            console.println("Current points:  " + totalCurrentPts(playerHand));
 
         }
 
@@ -77,20 +81,24 @@ public abstract class BlackJackGame implements GamblingGame  {
 
     }
 
-    public  void showCompCards(int i){
-        if(i == 0){
+    public  void showCompCards(){
+       /* if(i == 0){
             System.out.println(compHand.get(i));
+        }*/
+       console.println("Computer Card. One will be hidden");
+        for(int i = 0; i < compHand.size(); i++){
+            System.out.println(compHand.get(i).toString());
         }
     }
 
     public void status(){
         System.out.println(" |STATUS |\n\t WALLET:" + wallet + "\n\t MONEYPOOL:" + totalPool);
-        if(playerHand.isEmpty()){
+      /*  if(playerHand.isEmpty()){
             System.out.println(playerHand.toString());
 
         }else{
             System.out.println("NO CARDS YET");
-        }
+        }*/
 
     }
     public void hitOrStay(int in){
@@ -126,7 +134,11 @@ public abstract class BlackJackGame implements GamblingGame  {
     }
 
     public void showCards(){
-        System.out.println(playerHand.toString());
+        console.println("YOUR HAND \n");
+      for(int i = 0; i < playerHand.size(); i++){
+          System.out.println(playerHand.get(i).toString());
+      }
+        console.println("\n");
     }
     public int compareCards(){
         int tmp = 0;
@@ -149,11 +161,8 @@ public abstract class BlackJackGame implements GamblingGame  {
     return tmp;
     }
 
-    //Game TEST
 
+    public void wageMoney() {
 
-
-
-
-
+    }
 }
