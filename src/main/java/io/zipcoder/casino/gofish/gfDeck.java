@@ -26,7 +26,7 @@ public class gfDeck {
         Collections.shuffle(c);
     }
 
-    public Card drawCard(){
+    public Card drawCard(Card insert){
         Card tmp = cards.get(0);
         cards.remove(cards.get(0));
         return tmp;

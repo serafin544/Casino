@@ -6,12 +6,6 @@ import io.zipcoder.casino.casino.Player;
 import java.util.ArrayList;
 
 
-import io.zipcoder.casino.blackJack.BjDeck;
-import io.zipcoder.casino.blackJack.Card;
-import io.zipcoder.casino.casino.Player;
-import io.zipcoder.casino.utilities.Console;
-
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class goFishGame {
@@ -55,39 +49,32 @@ public class goFishGame {
                 break;
 
 
-        }while(repProgram);
+        }
+        while (repProgram) ;
         System.out.println( "Goodbye!" );
 
     }
 
-    public static void testDecks(){
+    public static void testDecks() {
         boolean repTest = true;
         int hand;
         gfDeck fullDeck;
         gfDeck emptyHand;
-        do
-        {
-            System.out.println("Which Deck would you like to manipulate?\n" +
-                    "[1] Empty Hand\n[2] Full Deck\nEnter the Corresponding number");
+        do {
+            System.out.println( "Which Deck would you like to manipulate?\n" +
+                    "[1] Empty Hand\n[2] Full Deck\nEnter the Corresponding number" );
             hand = input.nextInt();
-            switch(hand)
-            {
+            switch (hand) {
                 case 1:
-                    emptyHand = new gfDeck();
-                    repTest = testDeck(emptyHand);
+
                     break;
                 case 2:
-                    fullDeck = new gfDeck();
-                    fullDeck.fillDeck();
-                    repTest = testDeck(fullDeck);
+
                     break;
             }
-        }while(repTest);
+        } while (repTest);
     }
 
-
-
-    }
 }
 
 
