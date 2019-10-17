@@ -42,24 +42,28 @@ public class goFishGame {
 
         Scanner scan = new Scanner( System.in );
         System.out.println( "Welcome to GO Fish Ju heard" );
-        System.out.println( "Rules: \n The goal is to win the most \"books\" of cards \n The cards rank from ace (high) to two (low).  \n Each player gets a turn in clockwise order  \n When you \"go fish\" you can take any card from the pool.\nGo Fish is over when one player runs out of cards or there are no more cards in the pool." );
+        System.out.println( "Rules: \n The goal is to win the most \"books\" of cards \n The cards rank from ace (high) to two (low).  \n Each player gets a turn in clockwise order  \n When you \"go fish\" you can take any card from the pool.\n Go Fish is over when one player runs out of cards or there are no more cards in the pool." );
 
-        System.out.println( "\n\n\n[1] Read Rules \n[2] Play Go Fish\n[3] Get OUT" );
+        System.out.println( "\n\n\n[1] Play Go Fish \n[2] Get OUT" );
         menu = input.nextInt();
         switch (menu) {
             case 1:
-
+                testDecks();
                 break;
             case 2:
                 goFishGame game = new goFishGame();
                 break;
-            case 3:
 
-                break;
+
         }
         System.out.println( "Goodbye!" );
 
     }
 
+    public static void testDecks(){
 
+
+    }
 }
+
+
