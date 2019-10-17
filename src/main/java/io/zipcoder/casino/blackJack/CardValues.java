@@ -15,15 +15,18 @@ public enum CardValues {
     KING(10),
     ACE(11);
 
-    private int cardValues;
+    private int cardValue;
 
-    public int getCardValues() {
-        return cardValues;
+    public int getValue() {
+        return cardValue;
     }
+
 
     private CardValues(int value){
-        this.cardValues = value;
+        this.cardValue = value;
 
 
     }
+
+
 }
