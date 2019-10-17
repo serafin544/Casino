@@ -1,4 +1,4 @@
-package io.zipcoder.casino.gofish;
+package io.zipcoder.casino.goFish;
 
 public enum gfCardValue {
     TWO(2),

@@ -109,10 +109,10 @@ public class BlackJackGame implements GamblingGame  {
 
         }
     }
-    public int totalCurrentPts(ArrayList<Card> c){
-        int tmp =0;
-        for(int i = 0; i < c.size(); i++) {
-            tmp += c.get(i).getValue();
+    public int totalCurrentPts(ArrayList<Card> c) {
+        int tmp = 0;
+        for (int i = 0; i < c.size(); i++) {
+            tmp += c.get( i ).getValue();
         }
         return tmp;
     }
