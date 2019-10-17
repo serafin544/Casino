@@ -11,7 +11,7 @@ public class Craps {
 
 //         Constructor for objects of the class.
          public Craps(){
-             dieRoll = 0;
+             Array
          }
 //         The roll method of the six sided die.
 //         Return value for the method.
