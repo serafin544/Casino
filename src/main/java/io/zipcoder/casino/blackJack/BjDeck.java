@@ -4,22 +4,27 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.EnumSet;
 
-public class bjDeck {
-    static ArrayList<Card> cards ;
-    public bjDeck(){
+public class BjDeck {
+     ArrayList<Card> cards ;
+
+    public BjDeck(){
         cards = new ArrayList<Card>(52);
     }
-    public static ArrayList createDeck(){
-        ArrayList c = new ArrayList();
+
+    public ArrayList<Card> createDeck(){
+
         for(CardFaces cardFaces: EnumSet.range(CardFaces.HEARTS, CardFaces.SPADES)){
             for(CardValues cardValues : EnumSet.range(CardValues.TWO,CardValues.ACE)){
-                c.add(new Card(cardFaces,cardValues));
+                cards.add(new Card(cardFaces,cardValues));
             }
         }
-        return c;
+        return cards;
+
     }
-    public static void shuffledDeck(ArrayList<Card> c) {
-        Collections.shuffle(c);
+    public ArrayList<Card> shuffledDeck() {
+
+        Collections.shuffle(cards);
+        return cards;
     }
 
     public Card drawCard(){
@@ -27,9 +32,9 @@ public class bjDeck {
         cards.remove(cards.get(0));
         return tmp;
     }
-    public static void printDeck(ArrayList<Card> c){
-        for(int i = 0; i < c.size(); i++){
-            System.out.println(c.get(i).toString());
+    public  void printDeck(){
+        for(int i = 0; i < cards.size(); i++){
+            System.out.println(cards.get(i).toString());
         }
 
     }
