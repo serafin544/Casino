@@ -24,8 +24,8 @@ public class PigDice  {
         return num;
     }
 
-    public static void main(String[] args)
+  /* // public static void main(String[] args)
     {
         System.out.println("Total is: "+rollDice(1, 6));
-    }
+    }*/
 }
