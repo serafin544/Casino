@@ -23,6 +23,10 @@ public class PigDice  {
         }
         return num;
     }
+    public static int score(int[] total){
+
+    }
+
 
     public static void main(String[] args)
     {
