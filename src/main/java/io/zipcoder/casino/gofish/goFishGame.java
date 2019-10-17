@@ -55,12 +55,36 @@ public class goFishGame {
                 break;
 
 
-        }
+        }while(repProgram);
         System.out.println( "Goodbye!" );
 
     }
 
     public static void testDecks(){
+        boolean repTest = true;
+        int hand;
+        gfDeck fullDeck;
+        gfDeck emptyHand;
+        do
+        {
+            System.out.println("Which Deck would you like to manipulate?\n" +
+                    "[1] Empty Hand\n[2] Full Deck\nEnter the Corresponding number");
+            hand = input.nextInt();
+            switch(hand)
+            {
+                case 1:
+                    emptyHand = new gfDeck();
+                    repTest = testDeck(emptyHand);
+                    break;
+                case 2:
+                    fullDeck = new gfDeck();
+                    fullDeck.fillDeck();
+                    repTest = testDeck(fullDeck);
+                    break;
+            }
+        }while(repTest);
+    }
+
 
 
     }
