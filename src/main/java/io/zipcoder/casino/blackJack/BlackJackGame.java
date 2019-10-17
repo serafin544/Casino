@@ -25,7 +25,7 @@ public abstract class BlackJackGame implements GamblingGame  {
     public void play(Player player, Console console){
         Scanner scan = new Scanner(System.in);
         System.out.println("Welcome to BlackJack");
-        System.out.println("Rules: \n Make the highest Combo \nDo not go over 21 \n Press 1 to hit \n Press 0 to hit \nPress anything else and you lose your bet");
+        System.out.println("Rules: \n Make the highest Combo \n Do not go over 21 \n Press 1 to hit \n Press 0 to hit \nPress anything else and you lose your bet");
 
     }
     public String checkCardPts(ArrayList<Card> c){

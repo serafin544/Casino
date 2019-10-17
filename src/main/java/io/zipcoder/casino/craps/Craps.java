@@ -4,17 +4,17 @@ import io.zipcoder.casino.casino.GamblingGame;
 
 import java.util.ArrayList;
 
-public class Craps implements GamblingGame {
+     public class Craps {
 
-    public void pass(){
+         public void pass(){
 
-    }
+         }
 
-    public void stay(){
+         public void stay(){
 
-    }
+         }
 
-    public void wageMoney() {
+         public void wageMoney() {
 
-    }
+         }
 }

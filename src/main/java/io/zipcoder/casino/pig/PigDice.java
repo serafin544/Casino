@@ -19,7 +19,7 @@ public class PigDice  {
         }
         else
         {
-            System.out.println("Error num needs to be from 1");
+            System.out.println("Error num needs to be from 1 to 6");
         }
         return num;
     }
