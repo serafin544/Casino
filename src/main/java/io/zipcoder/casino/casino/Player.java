@@ -2,9 +2,10 @@ package io.zipcoder.casino.casino;
 
 import java.util.ArrayList;
 
-public class Player implements GamblingPlayer{
+public class Player implements GamblingPlayer {
     private String name;
     private double wallet;
+
     public Player(String name) {
         this.name = name;
         this.wallet = 1000;
@@ -13,9 +14,6 @@ public class Player implements GamblingPlayer{
     public double getWallet() {
         return wallet;
     }
-
-
-    public ArrayList<Object> hand() {
-        return null;
-    }
 }
+
+
