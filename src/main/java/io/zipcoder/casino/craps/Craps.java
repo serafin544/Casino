@@ -11,7 +11,7 @@ public class Craps {
 
 //         Constructor for objects of the class.
          public Craps(){
-             Array
+             //Array;
          }
 //         The roll method of the six sided die.
 //         Return value for the method.
@@ -27,7 +27,7 @@ public class Craps {
 //             Roll the dice for the first roll.
              System.out.println("Let's play a game of Craps");
              int roll1 = d1.roll();
-             int roll2 = d
-             int rollTotal = roll1 + roll2
+             //int roll2 = d;
+             //int rollTotal = roll1 + roll2;
          }
 }

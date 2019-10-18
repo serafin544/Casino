@@ -3,6 +3,7 @@ package io.zipcoder.casino.goFish;
 import io.zipcoder.casino.blackJack.Card;
 import io.zipcoder.casino.casino.Player;
 
+
 import java.util.ArrayList;
 
 
@@ -48,7 +49,7 @@ public class goFishGame {
         menu = input.nextInt();
         switch (menu) {
             case 1:
-                testDecks();
+                //testDecks();
                 break;
             case 2:
                 goFishGame game = new goFishGame();
@@ -60,7 +61,7 @@ public class goFishGame {
 
     }
 
-    public static void testDecks(){
+/*    public static void testDecks(){
         boolean repTest = true;
         int hand;
         gfDeck fullDeck;
@@ -83,11 +84,11 @@ public class goFishGame {
                     break;
             }
         }while(repTest);
-    }
+    }*/
 
 
 
-    }
+    //}
 }
 
 
