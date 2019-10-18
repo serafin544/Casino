@@ -1,15 +1,75 @@
 package io.zipcoder.casino.gofish;
 
 import io.zipcoder.casino.blackJack.Card;
+
+import io.zipcoder.casino.casino.GamblingGame;
 import io.zipcoder.casino.casino.Player;
-
-
+import io.zipcoder.casino.gofish.gfDeck;
+import io.zipcoder.casino.utilities.Console;
 import java.util.ArrayList;
-
-
 import java.util.Scanner;
 
-public class goFishGame {
+public class GoFishGame implements GamblingGame {
+    Player player;
+    ArrayList<Card> playerHand = new ArrayList<Card>();
+    ArrayList<Card> computerHand = new ArrayList<Card>();
+    gfDeck gameDeck = new gfDeck();
+    ArrayList deck = gameDeck.createDeck();
+
+    double wallet;
+    double totalPool = 0.0;
+    int quadPlayerPt = 0;
+    int quadComputerPt = 0;
+    Console console = new Console(System.in,System.out);
+
+
+    public void wageMoney() { }
+    public void wageMoney(double bet){ totalPool += bet;}
+    public GoFishGame(Player player){
+        this.player = player;
+        wallet = player.getWallet();
+    }
+    public void play(){
+        double playerBet;
+        boolean lessThanWallet = false;
+        do{
+            console.println("Wallet amt: " + wallet);
+            playerBet = console.getDoubleInput("Place your bet within your current assets"); //input stand in
+            if(playerBet < wallet){
+                wallet -= playerBet;
+                wageMoney(playerBet);
+                lessThanWallet = true;
+            }
+            //Takes away the money might move it to end
+            //Adds to the betting pool
+        }while(!lessThanWallet);
+
+        //Computer will match bet
+        System.out.println("Dealer will match your bet");
+        double compBet = playerBet;
+        wageMoney(compBet);
+        dishOutSeven();
+        showCards();
+    }
+
+    public void showCards(){
+        console.println("YOUR HAND \n");
+        for(int i = 0; i < playerHand.size(); i++){
+            System.out.println(playerHand.get(i).toString());
+        }
+        console.println("\n");
+    }
+
+    public void dishOutSeven(){
+      /*  int i= 0;
+        while(i < 7) {
+            playerHand.add(deck.drawCard());
+            computerHand.add();
+            i++;*/
+
+    }
+
+
 
 
 }
@@ -93,6 +153,5 @@ public class goFishGame {
 
     //}*/
 
->>>>>>> 03291670a633f60cdfcfc21f4e7e406facd17482
 
 

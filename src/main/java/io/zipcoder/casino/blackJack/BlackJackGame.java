@@ -62,6 +62,7 @@ public class BlackJackGame implements GamblingGame  {
         wageMoney(compBet);
 
         System.out.println("Drawing cards");
+        deck.shuffledDeck();
         playerHand.add(deck.drawCard());
         compHand.add(deck.drawCard());
         playerHand.add(deck.drawCard());
