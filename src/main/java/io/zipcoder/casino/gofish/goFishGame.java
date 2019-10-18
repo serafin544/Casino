@@ -1,7 +1,8 @@
-package io.zipcoder.casino.goFish;
+package io.zipcoder.casino.gofish;
 
 import io.zipcoder.casino.blackJack.Card;
 import io.zipcoder.casino.casino.Player;
+
 
 import java.util.ArrayList;
 
@@ -15,7 +16,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class goFishGame {
-    public static Scanner input = new Scanner( System.in );
+
+
+}
+/*    public static Scanner input = new Scanner( System.in );
     ArrayList<Card> gfDeck;
     Player player;
     ArrayList<Card> compHand;
@@ -48,7 +52,7 @@ public class goFishGame {
         menu = input.nextInt();
         switch (menu) {
             case 1:
-                testDecks();
+                //testDecks();
                 break;
             case 2:
                 goFishGame game = new goFishGame();
@@ -60,7 +64,7 @@ public class goFishGame {
 
     }
 
-    public static void testDecks(){
+*//*    public static void testDecks(){
         boolean repTest = true;
         int hand;
         gfDeck fullDeck;
@@ -83,11 +87,11 @@ public class goFishGame {
                     break;
             }
         }while(repTest);
-    }
+    }*//*
 
 
 
-    }
-}
+    //}*/
+
 
 
