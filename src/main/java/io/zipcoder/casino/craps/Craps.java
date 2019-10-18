@@ -56,12 +56,26 @@ public class Craps implements GamblingGame {
     }
 
 
+<<<<<<< HEAD
+=======
+//         Constructor for objects of the class.
+         public Craps(){
+             //Array;
+         }
+//         The roll method of the six sided die.
+//         Return value for the method.
+         public int roll(){
+             dieRoll = (int) (Math.random() * 6) +1;
+             return dieRoll;
+         }
+>>>>>>> 03291670a633f60cdfcfc21f4e7e406facd17482
 
         Die d1 = new Die();
         Die d2 = new Die();
         Scanner in = new Scanner( System.in );
       //  while (true)
 
+<<<<<<< HEAD
     {
     }
      public void rolls() {
@@ -89,6 +103,13 @@ public class Craps implements GamblingGame {
                  System.out.println( "Press [Enter] to roll dice..." );
                  keepPlaying = false;
              }
+=======
+//             Roll the dice for the first roll.
+             System.out.println("Let's play a game of Craps");
+             int roll1 = d1.roll();
+             //int roll2 = d;
+             //int rollTotal = roll1 + roll2;
+>>>>>>> 03291670a633f60cdfcfc21f4e7e406facd17482
          }
      }
             public void rollAgain() {

@@ -42,12 +42,20 @@ public class BlackJackGame implements GamblingGame  {
         status();
 
         //Set up Scanner to take in double and not go over wallet amt
+        double playerBet;
+        boolean lessThanWallet = false;
+        do{
+            console.println("Wallet amt: " + wallet);
+            playerBet = console.getDoubleInput("Place your bet within your current assets"); //input stand in
+            if(playerBet < wallet){
+                wallet -= playerBet;
+                wageMoney(playerBet);
+                lessThanWallet = true;
+            }
+            //Takes away the money might move it to end
+            //Adds to the betting pool
+        }while(!lessThanWallet);
 
-        double playerBet = console.getDoubleInput("Place your bet"); //input stand in
-        //Takes away the money might move it to end
-        wallet -= playerBet;
-        //Adds to the betting pool
-        wageMoney(playerBet);
         //Computer will match bet
         System.out.println("Dealer will match your bet");
         double compBet = playerBet;
@@ -59,7 +67,7 @@ public class BlackJackGame implements GamblingGame  {
         playerHand.add(deck.drawCard());
         compHand.add(deck.drawCard());
         showCards();
-        showCompCards();
+        console.println(compHand.get(0).toString());
         counter++;
 
         while(!bust){
